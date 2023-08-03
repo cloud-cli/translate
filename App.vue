@@ -14,7 +14,7 @@
         :disabled="busy"
         class="bg-blue-500 text-white px-4 py-3"
       >
-        <span v-if="busy" class="material-icons">refresh</span>
+        <span v-if="busy" class="material-icons animate-spin">refresh</span>
         <span v-else  class="material-icons">translate</span>
       </button>
     </div>
