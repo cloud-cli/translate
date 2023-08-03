@@ -1,0 +1,21 @@
+{
+  "name": "Translate",
+  "short_name": "Translate",
+  "description": "AI-powered text translation",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "https://notes.homebots.io/",
+  "display": "standalone",
+  "theme_color": "#e91e63",
+  "background_color": "#ffffff"
+}
