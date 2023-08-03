@@ -7,7 +7,9 @@
       class="p-2 bg-transparent font-bold text-xl my-4 h-20"
       v-model="source"
     ></textarea>
-    <div class="p-2 bg-gray-200 my-4 text-xl"></div>
+    <div class="p-2 bg-gray-200 my-4 text-xl">
+      {{ translation }}
+    </div>
     <div class="text-center">
       <button
         type="submit"
@@ -15,7 +17,7 @@
         class="bg-blue-500 text-white px-4 py-3"
       >
         <span v-if="busy" class="material-icons animate-spin">refresh</span>
-        <span v-else  class="material-icons">translate</span>
+        <span v-else class="material-icons">translate</span>
       </button>
     </div>
   </form>
