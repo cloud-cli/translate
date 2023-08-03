@@ -1,26 +1,29 @@
 <template>
-  <form
-    @submit.prevent="onSubmit()"
-    class="flex flex-col container mx-auto p-4"
-  >
-    <textarea
-      class="p-2 bg-transparent font-bold text-xl my-4 h-20"
-      v-model="source"
-    ></textarea>
-    <div class="p-2 bg-gray-200 my-4 text-xl">
-      {{ translation }}
-    </div>
-    <div class="text-center">
-      <button
-        type="submit"
-        :disabled="busy"
-        class="bg-blue-500 text-white px-4 py-3"
-      >
-        <span v-if="busy" class="material-icons animate-spin">refresh</span>
-        <span v-else class="material-icons">translate</span>
-      </button>
-    </div>
-  </form>
+  <div class="bg-gray-100 w-screen h-screen p-4">
+    <form @submit.prevent="onSubmit()" class="flex container mx-auto">
+      <div class="flex-col md:flex-row justify-items-stretch">
+        <textarea
+          class="p-2 bg-transparent font-medium text-xl my-4 h-20"
+          v-model="source"
+        ></textarea>
+        <div class="p-2 border border-gray-300 text-primary font-bold my-4 text-xl" v-if="translation">
+          {{ translation }}
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button
+          type="submit"
+          :disabled="busy"
+          class="bg-primary text-white px-4 py-3 rounded"
+        >
+          <span v-if="busy" class="material-icons animate-spin">refresh</span>
+          <span v-else class="material-icons">translate</span>
+          <span>Translate</span>
+        </button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script setup>
