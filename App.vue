@@ -1,18 +1,16 @@
 <template>
   <div class="w-screen h-screen p-4">
     <form @submit.prevent="onSubmit()" class="container mx-auto">
-      <div class="flex flex-col md:flex-row">
+      <div class="flex flex-col gap-4">
         <textarea
-          class="p-2 bg-transparent font-medium text-xl my-4 h-20"
+          class="p-2 bg-transparent h-min font-medium text-xl"
           v-model="source"
         ></textarea>
-        <hr class="my-4 mx-4">
-        <div class="p-2 border border-gray-300 text-primary font-bold my-4 text-xl" v-if="translation">
+        <div class="p-2 h-min border border-gray-300 text-primary font-bold text-xl overflow-y-auto">
           {{ translation }}
         </div>
-      </div>
 
-      <div class="text-center mt-4">
+      <div class="text-center">
         <button
           type="submit"
           :disabled="busy"
@@ -22,7 +20,7 @@
           <span v-else class="material-icons">translate</span>
           <span>Translate</span>
         </button>
-      </div>
+      </div></div>
     </form>
   </div>
 </template>
@@ -47,3 +45,5 @@ async function onSubmit() {
   }
 }
 </script>
+<style>
+.h-min { min-height: 40vh }</style>
