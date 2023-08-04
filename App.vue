@@ -10,23 +10,23 @@
           {{ translation }}
         </div>
 
-      <div class="text-center">
+
         <button
           type="submit"
           :disabled="busy"
-          class="bg-primary text-white px-4 py-3 rounded"
+          class="bg-primary text-white px-4 py-3 rounded flex items-center mx-auto"
         >
           <span v-if="busy" class="material-icons animate-spin">refresh</span>
           <span v-else class="material-icons">translate</span>
           <span>Translate</span>
         </button>
-      </div></div>
+      </div>
     </form>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import translateText from "https://aifn.run/fn/228e48d5-7188-4529-bfc6-8430b4ecf8a0.js";
 
 const source = ref("");
@@ -44,6 +44,8 @@ async function onSubmit() {
     busy.value = false;
   }
 }
+
+onMounted(()=> document.querySelector('textarea')?.focus())
 </script>
 <style>
 .h-min { min-height: 40vh }</style>
