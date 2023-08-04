@@ -5,7 +5,8 @@
   >
     <textarea
       @keyup="onKeyUp($event)"
-      class="p-2 bg-transparent h-min font-medium text-xl rounded-md"
+      class="p-2 bg-transparent h-min font-medium text-xl rounded-md border border-gray-300 text-gray-800"
+      placeholder="Text..."
       v-model="source"
     ></textarea>
     <div
