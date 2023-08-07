@@ -6,7 +6,7 @@
     <div class="shadow-md rounded bg-white p-4 relative">
       <button
         type="button"
-        class="text-gray-400 bg-white rounded-full p-2 flex items-center absolute z-10 top-0 right-0 m-1"
+        class="text-gray-400 rounded-full p-2 flex items-center absolute z-10 top-0 right-0"
         @click="onReset()"
       >
         <span v-if="busy" class="material-icons animate-spin">refresh</span>
@@ -14,7 +14,7 @@
       </button>
       <textarea
         @keyup="onKeyUp($event)"
-        class="h-min font-medium text-xl text-gray-800 resize-none w-full"
+        class="h-min font-medium text-xl text-gray-800 resize-none w-full focus:outline-none focus:ring focus:border-blue-300"
         placeholder="Type in here..."
         v-model="source"
       ></textarea>
