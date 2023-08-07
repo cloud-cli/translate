@@ -3,7 +3,7 @@
     class="w-screen h-screen container mx-auto p-4 flex flex-col gap-4 overflow-y-auto"
     @submit.prevent="onSubmit()"
   >
-    <div class="shadow-md rounded bg-white p-2 relative">
+    <div class="shadow-md rounded bg-white p-4 relative">
       <span
         v-if="error"
         class="material-icons absolute top-0 right-0 z-10 m-1 text-red-500"
@@ -17,11 +17,11 @@
       ></textarea>
     </div>
     <div
-      class="shadow-md rounded p-2 h-min bg-gray-100 text-primary font-bold text-xl relative"
+      class="shadow-md rounded p-4 h-min bg-gray-100 text-gray-800 font-bold text-xl relative"
     >
       <button
         type="button"
-        class="text-primary p-2 flex items-center absolute z-10 top-0 right-0 m-1"
+        class="text-gray-400 p-2 flex items-center absolute z-10 top-0 right-0 m-1"
         @click="onReset()"
       >
         <span v-if="busy" class="material-icons animate-spin">refresh</span>
