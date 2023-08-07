@@ -11,7 +11,7 @@
       >
       <textarea
         @keyup="onKeyUp($event)"
-        class="h-min font-medium text-xl text-gray-800 resize-none"
+        class="h-min font-medium text-xl text-gray-800 resize-none w-full"
         placeholder="Text..."
         v-model="source"
       ></textarea>
