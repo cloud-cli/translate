@@ -11,7 +11,7 @@
       >
       <textarea
         @keyup="onKeyUp($event)"
-        class="h-min font-medium text-xl text-gray-800"
+        class="h-min font-medium text-xl text-gray-800 resize-none"
         placeholder="Text..."
         v-model="source"
       ></textarea>
@@ -80,9 +80,3 @@ function onReset() {
 watch(source, debounce(onSubmit));
 onMounted(() => document.querySelector("textarea")?.focus());
 </script>
-
-<style>
-.h-min {
-  min-height: 45vh
-}
-</style>

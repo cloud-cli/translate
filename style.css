@@ -13,3 +13,7 @@
 .border-primary {
   border-color: var(--primary);
 }
+
+.h-min {
+  min-height: 43vh
+}
