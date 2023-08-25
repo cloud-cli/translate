@@ -19,7 +19,7 @@
         v-model="source"
       ></textarea>
       <div
-        class="rounded-full bg-white px-4 py-2 border-gray-200 border text-gray-500 absolute z-10 bottom-0 mx-auto text-sm"
+        class="rounded-full bg-white px-4 py-2 border-gray-200 border text-gray-500 absolute z-10 bottom-0 mx-auto text-sm centered"
         v-if="language"
       >
         {{ language }} to English
