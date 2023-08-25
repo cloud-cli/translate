@@ -1,12 +1,12 @@
 <template>
   <div
-    class="w-screen h-screen container mx-auto p-4 flex flex-col gap-4 overflow-y-auto"
+    class="w-screen h-screen container mx-auto flex flex-col p-4 overflow-y-auto"
     @submit.prevent="onSubmit()"
   >
-    <div class="shadow-md rounded bg-white p-4 relative">
+    <div class="shadow-md rounded-t bg-white relative">
       <button
         type="button"
-        class="text-gray-400 rounded-full p-2 flex items-center absolute z-10 top-0 right-0"
+        class="text-gray-400 rounded-full flex items-center absolute z-10 top-0 right-0"
         @click="onReset()"
       >
         <span v-if="busy" class="material-icons animate-spin">refresh</span>
@@ -14,13 +14,19 @@
       </button>
       <textarea
         @keyup="onKeyUp($event)"
-        class="h-min font-medium text-xl text-gray-800 resize-none w-full focus:outline-none focus:ring focus:border-blue-300"
+        class="p-4 h-min font-medium rounded text-xl text-gray-800 resize-none w-full focus:outline-none focus:ring focus:border-blue-300"
         placeholder="Type in here..."
         v-model="source"
       ></textarea>
+      <div
+        class="rounded-full bg-white px-4 py-2 border-gray-200 border text-gray-500 absolute z-10 bottom-0 mx-auto text-sm"
+        v-if="language"
+      >
+        {{ language }} to English
+      </div>
     </div>
     <div
-      class="shadow-md rounded p-4 h-min bg-gray-100 text-gray-800 font-bold text-xl relative"
+      class="shadow-md rounded-b p-4 h-min bg-gray-100 text-gray-800 font-bold text-xl relative"
     >
       <span
         v-if="error"
@@ -28,9 +34,6 @@
         >error</span
       >
       <div>{{ translation }}</div>
-    </div>
-    <div class="text-center text-sm text-gray-500" v-if="language">
-      {{ language }} => English
     </div>
   </div>
 </template>
